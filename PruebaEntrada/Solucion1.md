@@ -56,11 +56,7 @@ graph TD
 32920 --> 32928
 ```
 
-``` dot
-
-`
-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTk5MDY5MDIsLTk1Njc4MTg5LDE2OD
-Q5Njg0ODAsMTk0MjcxNDY2MF19
+eyJoaXN0b3J5IjpbMjgxMTU5Mjk3LC05NTY3ODE4OSwxNjg0OT
+Y4NDgwLDE5NDI3MTQ2NjBdfQ==
 -->
