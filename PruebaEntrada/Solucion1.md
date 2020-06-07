@@ -35,7 +35,7 @@ return  0;
 ## Jerarquía de procesos:
 
 * Para su correcta visualización del arbol de procesos en vscode es necesario la extensión de mermaid en vscode `ext install bierner.markdown-mermaid` 
-* Una solución web 
+* Una solución web puede ser [https://stackedit.io/app#](https://stackedit.io/app#) e importar el fichero para su visualización.
 
 ``` mermaid
 graph TD
@@ -56,6 +56,6 @@ graph TD
 32920 --> 32928
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDk2NTI0NTQsMTY4NDk2ODQ4MCwxOT
-QyNzE0NjYwXX0=
+eyJoaXN0b3J5IjpbOTk4MDQyMjUzLDE2ODQ5Njg0ODAsMTk0Mj
+cxNDY2MF19
 -->
