@@ -7,7 +7,8 @@ Según lo indicado en el enunciado del problema 2 según los tiempos sería:
 |__E/S D2__|    |    |    |    |    |    |    |    |     |    |    |   | 
 |__E/S D1__|    |    |    |    |    |    | A1 | A2 |     |    |    |   |
 |__CPU__   | IR | A1 | A2 | IS | IR | IS | B1 | B2 | IH1 | IR | B3 | B4| 
- ```
+
+```
 ```
  
 | | | | | | | | | | | | | | |
@@ -26,5 +27,5 @@ Según lo indicado en el enunciado del problema 2 según los tiempos sería:
 |__CPU__   |IH1 | IR |IH2 | B1 | IR | IS | IS | A1 | IR  | IS | IS |   | 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk3MTU2MTU0LDE0NDAxNjI5Nl19
+eyJoaXN0b3J5IjpbNjU4OTc2MDkwLDE0NDAxNjI5Nl19
 -->
