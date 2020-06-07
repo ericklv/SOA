@@ -1,5 +1,5 @@
 # Solución 1
-La jerarquía de procesos generada del siguiente código se puede ver al final, el metodo `fork()` presente es el encargado de generar un proceso hijo como copia del padre para cada iteración dentro del bucle generado.
+La jerarquía de procesos generada del siguiente código se puede ver al final, el método `fork()` presente es el encargado de generar un proceso hijo como copia del padre para cada iteración dentro del bucle generado.
 
 ``` c
 #include  <sys/types.h>
@@ -55,5 +55,5 @@ graph TD
 32920 --> 32928
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0MjcxNDY2MF19
+eyJoaXN0b3J5IjpbMTY4NDk2ODQ4MCwxOTQyNzE0NjYwXX0=
 -->
