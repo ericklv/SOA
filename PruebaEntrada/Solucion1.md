@@ -1,7 +1,6 @@
 # Solución 1
 La jerarquía de procesos generada del siguiente código se puede ver al final, el metodo `fork()` presente es el encargado de generar un proceso hijo como copia del padre para cada iteración dentro del bucle generado.
 
-
 ``` c
 #include  <sys/types.h>
 #include  <sys/wait.h>
@@ -35,8 +34,7 @@ return  0;
 
 ## Jerarquía de procesos:
 
-* Para su correcta visualización del arbol de procesos en vscode es necesario la extensión de mermaid en vscode 
-`ext install bierner.markdown-mermaid` 
+* Para su correcta visualización del arbol de procesos en vscode es necesario la extensión de mermaid en vscode `ext install bierner.markdown-mermaid` 
 
 ``` mermaid
 graph TD
@@ -55,9 +53,7 @@ graph TD
 32918 --> 32924
 32920 --> 32929
 32920 --> 32928
-
-
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5MTc3ODgyNF19
+eyJoaXN0b3J5IjpbMTk0MjcxNDY2MF19
 -->
