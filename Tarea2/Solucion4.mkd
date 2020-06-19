@@ -1,0 +1,45 @@
+### Solucion 5
+
+#### Erick Lazon 20111347C
+
+Primero debemos definir que ocurre durante un cambio de contexto, nos plantaemos la situación donde el kernel haya decidido  
+cambiar de subproceso (Esto puede ocurrir cuando un proceso queda esperando un IO).  
+Ahora, lo que ocurre durante este evento es un cambio al modo del kernel (esto puede darse o por un llamado directo al sistema o por una interrupcion del timer).  
+Es necesario guardar los registros del hilo del espacio de usuario y saltar al codigo del kernel. Luego el scheduler se encarga de ejecutar el subproceso siguiente, al terminar este  
+nuevamente el kernel restaura los registros del nuevo hilo y cede el control al espacio de usuario.
+
+Haremos uso del repo https://github.com/gz/contextswitch que nos provee 2 ficheros:  
+
+* measureSwitch.c: comunicación de 2 procesos a traves de un pipe  
+
+* measureSingle.c: un solo proceso que simula la 2 comunicaciones de procesos
+
+![Salida de ejecución ](https://live.staticflickr.com/65535/50022513196_a2732edeea_z.jpg)
+
+Definimos como la diferencia entre los tiempos de measureSwitch y measureSingle como el costo total de cambio de contexto.
+
+Hacemos la prueba de ambos ficheros sin incluir un arraySize o un strideSize con esto segun el README del repo obtendriamos es el costo directo del cambio de contexto (estamos tomando los tiempos minimos de cada ejecución)
+```
+   costo directo de cambio de contexto =  time2 - time1 
+   
+   => 39.120729433489032 - 11.717963460250758 = 27.4027659732 microsegundos
+``` 
+Para este caso particular no habria un costo indirecto de cambio de contexto, ejecutamos varias veces y notamos que el time2 siempre  es mayor que el time1, con esto probamos que existe un costo de cambio de contexto.
+
+![Salida de ejecución ](https://live.staticflickr.com/65535/50021971553_179bdd906e_z.jpg)
+
+```
+t2 - t1 = 15.903088003688026 - 1.672404458076926 = 14.2306835456
+
+t2 - t1 = 3.816536896920298 - 3.492608600936364 = 0.32392829598
+
+t2 - t1 = 20.322504885552917 - 6.602028477936983 = 13.7204764076
+
+```
+En azul tenemos los tiempos de measureSwitch y en rojo los tiempos de measureSingle en microsegundos.
+
+![grafica](https://live.staticflickr.com/65535/50022402633_84510895a7_z.jpg)
+
+Podemos concluir que el cambio de contexto es una herramienta muy util cuando solo se cuenta con un cpu,  
+pues permite alternar el uso del CPU entre distintos procesos en intervalos cortos de tiempo a costo de aumentar un poco mas el tiempo de ejecución, esto tambien tiene otras desventajas como un cambio de contexto en un momento inadecuado generando un problema 
+conocido como inversión de proridades (cuando el scheduler llama a un proceso de menor prioridad bloqueando el recurso antes que el proceso de prioridad mayor, haciendo que no puedan cumplir el objetivo hasta que no se libere el recurso)
